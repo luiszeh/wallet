@@ -1,0 +1,8 @@
+Header {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #dadada;
+    height: 50px;
+    margin-bottom: 20px;
+}
