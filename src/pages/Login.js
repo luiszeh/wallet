@@ -59,7 +59,7 @@ class Login extends React.Component {
     return (
       <div className="Login-all">
         <section className="Login">
-          <h3>Fazer Login</h3>
+          <h3>Tech Wallet</h3>
           <GiWallet className="Icon" />
           <input
             className="Email"
