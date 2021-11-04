@@ -1,13 +1,14 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
-import InputValue from './InputValue';
-import InputDescription from './InputDescription';
-import InputCurrency from './InputCurrency';
-import InputPayment from './InputPayment';
-import InputTag from './InputTag';
-import { addExpenses } from '../actions';
+import React from "react";
+import { Link } from "react-router-dom";
+import { connect } from "react-redux";
+import PropTypes from "prop-types";
+import InputValue from "./InputValue";
+import InputDescription from "./InputDescription";
+import InputCurrency from "./InputCurrency";
+import InputPayment from "./InputPayment";
+import InputTag from "./InputTag";
+import { addExpenses } from "../actions";
+import "./ExpenseForm.css";
 
 class ExpenseForm extends React.Component {
   constructor() {
@@ -15,12 +16,12 @@ class ExpenseForm extends React.Component {
 
     this.state = {
       id: 0,
-      currencies: '',
+      currencies: "",
       valor: 0,
-      description: '',
-      currency: 'USD',
-      paymentMethod: 'Dinheiro',
-      tag: 'Alimentação',
+      description: "",
+      currency: "USD",
+      paymentMethod: "Dinheiro",
+      tag: "Alimentação",
     };
 
     this.getCurrencies = this.getCurrencies.bind(this);
@@ -34,9 +35,13 @@ class ExpenseForm extends React.Component {
 
   async getCurrencies() {
     try {
-      const response = await fetch('https://economia.awesomeapi.com.br/json/all');
+      const response = await fetch(
+        "https://economia.awesomeapi.com.br/json/all"
+      );
       const results = await response.json();
-      const filter = Object.keys(results).filter((currencies) => currencies !== 'USDT');
+      const filter = Object.keys(results).filter(
+        (currencies) => currencies !== "USDT"
+      );
       this.setState({
         currencies: filter,
       });
@@ -50,7 +55,7 @@ class ExpenseForm extends React.Component {
 
   handleChange({ target }) {
     const { id } = target;
-    const value = target.type === 'checkbox' ? target.checked : target.value;
+    const value = target.type === "checkbox" ? target.checked : target.value;
     this.setState({ [id]: value });
   }
 
@@ -73,20 +78,27 @@ class ExpenseForm extends React.Component {
   }
 
   render() {
-    const { currencies, valor, description, currency, paymentMethod, tag } = this.state;
+    const { currencies, valor, description, currency, paymentMethod, tag } =
+      this.state;
     return (
       <section>
-        <form>
-          <InputValue value={ valor } handleChange={ this.handleChange } />
-          <InputDescription value={ description } handleChange={ this.handleChange } />
-          <InputCurrency
-            value={ currency }
-            currencies={ currencies }
-            handleChange={ this.handleChange }
+        <form className="Form">
+          <InputValue value={valor} handleChange={this.handleChange} />
+          <InputDescription
+            value={description}
+            handleChange={this.handleChange}
           />
-          <InputPayment value={ paymentMethod } handleChange={ this.handleChange } />
-          <InputTag value={ tag } handleChange={ this.handleChange } />
-          <button type="button" onClick={ this.handleClick }>
+          <InputCurrency
+            value={currency}
+            currencies={currencies}
+            handleChange={this.handleChange}
+          />
+          <InputPayment
+            value={paymentMethod}
+            handleChange={this.handleChange}
+          />
+          <InputTag value={tag} handleChange={this.handleChange} />
+          <button type="button" onClick={this.handleClick}>
             Adicionar despesa
           </button>
         </form>
