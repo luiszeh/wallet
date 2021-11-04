@@ -10,7 +10,7 @@ https://user-images.githubusercontent.com/78225894/140391384-125279f3-9393-4b07-
 - [Boas vindas ao repositório do projeto Trybe Wallet!](#boas-vindas-ao-repositório-do-projeto-trybe-wallet)
 - [Sumário](#sumário)
 - [Habilidades](#habilidades)
-- [Instruções para entregar seu projeto](#instruções-para-entregar-seu-projeto)
+- [Instruções para rodar o projeto](#instruções-para-rodar-o-projeto)
 - [Como foi desenvolvido](#como-foi-desenvolvido)
   - [Configurando o Redux DevTools](#configurando-o-redux-devtools)
   - [Documentação da API de Cotações de Moedas](#documentação-da-api-de-cotações-de-moedas)
@@ -54,7 +54,7 @@ https://user-images.githubusercontent.com/78225894/140391384-125279f3-9393-4b07-
 
 ---
 
-# Instruções para entregar seu projeto
+# Instruções para rodar o projeto
 
 1. Clone o repositório
   * `git clone git@github.com:luiszeh/wallet.git`.
